@@ -4,16 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
-		<title>Pike Admin PRO</title>
-		<meta name="description" content="Bootstrap 4 Admin Theme | Pike Admin">
+		<title>Admin Ajarin</title>
+		<meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
 		<meta name="author" content="Pike Web Development - https://www.pikephp.com">
 
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="assets/images/favicon.ico">
 
-		<!-- Switchery css -->
-		<link href="assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
-		
 		<!-- Bootstrap CSS -->
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 		
@@ -24,13 +21,18 @@
 		<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 		
 		<!-- BEGIN CSS for this page -->
-
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
 		<!-- END CSS for this page -->
-				
+		
 </head>
 
 <body class="adminbody">
-
+<?php 
+session_start();
+if($_SESSION['status']!="login"){
+    header("location:../index.php?pesan=belum_login");
+}
+?>
 <div id="main">
 
 	<!-- top bar navigation -->
@@ -38,13 +40,13 @@
 
 		<!-- LOGO -->
         <div class="headerbar-left">
-			<a href="index.html" class="logo"><img alt="logo" src="assets/images/logo.png" /> <span>Admin</span></a>
+			<a href="index.html" class="logo"><img alt="Logo" src="assets/images/logo.png" /> <span>Ajarin</span></a>
         </div>
 
         <nav class="navbar-custom">
 
                     <ul class="list-inline float-right mb-0">
-
+						
 						<li class="list-inline-item dropdown notif">
                             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fa fa-fw fa-question-circle"></i>
@@ -182,7 +184,7 @@
                             <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <img src="assets/images/avatars/admin.png" alt="Profile image" class="avatar-rounded">
                             </a>
-                            <div class="dropdown-menu dropdown-menu-right profile-dropdown">
+                            <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
                                     <h5 class="text-overflow"><small>Hello, admin</small> </h5>
@@ -231,7 +233,7 @@
 			<ul>
 
 					<li class="submenu">
-						<a href="index.html"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
+						<a class="active" href="index.html"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
                     </li>
 
 					<li class="submenu">
@@ -326,7 +328,7 @@
                     </li>
 
 					<li class="submenu">
-                        <a class="active pro" href="#"><i class="fa fa-fw fa-star"></i><span> Pike Admin PRO </span> <span class="menu-arrow"></span></a>
+                        <a class="pro" href="#"><i class="fa fa-fw fa-star"></i><span> Pike Admin PRO </span> <span class="menu-arrow"></span></a>
                             <ul class="list-unstyled">								
                                 <li><a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro">Admin PRO features</a></li>
 								<li><a href="pro-settings.html">Settings</a></li>
@@ -334,7 +336,7 @@
                                 <li><a href="pro-users.html">Users</a></li>
                                 <li><a href="pro-articles.html">Articles</a></li>
                                 <li><a href="pro-categories.html">Categories</a></li>
-								<li class="active"><a href="pro-pages.html">Pages</a></li>								
+								<li><a href="pro-pages.html">Pages</a></li>								
                                 <li><a href="pro-contact-messages.html">Contact Messages</a></li>
 								<li><a href="pro-slider.html">Slider</a></li>
                             </ul>
@@ -360,141 +362,109 @@
         <div class="content">
             
 			<div class="container-fluid">
-
 					
-					<div class="row">
-						<div class="col-xl-12">
-							<div class="breadcrumb-holder">
-								<h1 class="main-title float-left">Pages</h1>
-								<ol class="breadcrumb float-right">
-								<li class="breadcrumb-item">Home</li>
-								<li class="breadcrumb-item active">Pages</li>
-								</ol>
-								<div class="clearfix"></div>
-							</div>
+						<div class="row">
+									<div class="col-xl-12">
+											<div class="breadcrumb-holder">
+													<h1 class="main-title float-left">Dashboard</h1>
+													<ol class="breadcrumb float-right">
+														<li class="breadcrumb-item">Home</li>
+														<li class="breadcrumb-item active">Dashboard</li>
+													</ol>
+													<div class="clearfix"></div>
+											</div>
+									</div>
 						</div>
-					</div>
-					<!-- end row -->
-
-            
-						<div class="alert alert-danger" role="alert">
-						<h4 class="alert-heading">Important!</h4>
-						<p>This section is available in Pike Admin PRO version.</p>
-						<p><b>Save over 50 hours of development with our Pro Framework: Registration / Login / Users Management, CMS, Front-End Template (who will load contend added in admin area and saved in MySQL database), Contact Messages Management, manage Website Settings and many more, at an incredible price!</b></p>
-						<p>Read more about all PRO features here: <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro"><b>Pike Admin PRO features</b></a></p>
-						</div>
-
-			
-			
-					<div class="row">
+						<!-- end row -->
 						
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">						
-								
-						<div class="card mb-3">
-						
-							<div class="card-header">
-							<span class="pull-right"><a href="pro-pages-add.html" class="btn btn-primary btn-sm"><i class="fa fa-plus" aria-hidden="true"></i> Add new page</a></span>
-							<h3><i class="fa fa-file-text-o"></i> All pages (3 pages)</h3>								
+							<div class="row">
+									<div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+											<div class="card-box noradius noborder bg-default">
+													<i class="fa fa-file-text-o float-right text-white"></i>
+													<h6 class="text-white text-uppercase m-b-20">Orders</h6>
+													<h1 class="m-b-20 text-white counter">1,587</h1>
+													<span class="text-white">15 New Orders</span>
+											</div>
+									</div>
+
+									<div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+											<div class="card-box noradius noborder bg-warning">
+													<i class="fa fa-bar-chart float-right text-white"></i>
+													<h6 class="text-white text-uppercase m-b-20">Visitors</h6>
+													<h1 class="m-b-20 text-white counter">250</h1>
+													<span class="text-white">Bounce rate: 25%</span>
+											</div>
+									</div>
+
+									<div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+											<div class="card-box noradius noborder bg-info">
+													<i class="fa fa-user-o float-right text-white"></i>
+													<h6 class="text-white text-uppercase m-b-20">Users</h6>
+													<h1 class="m-b-20 text-white counter">120</h1>
+													<span class="text-white">25 New Users</span>
+											</div>
+									</div>
+
+									<div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+											<div class="card-box noradius noborder bg-danger">
+													<i class="fa fa-bell-o float-right text-white"></i>
+													<h6 class="text-white text-uppercase m-b-20">Alerts</h6>
+													<h1 class="m-b-20 text-white counter">58</h1>
+													<span class="text-white">5 New Alerts</span>
+											</div>
+									</div>
 							</div>
-							<!-- end card-header -->	
-										
-							<div class="card-body">
+							<!-- end row -->
+
+
+							
+							<div class="row">
+							
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">						
+										<div class="card mb-3">
+											<div class="card-header">
+												<h3><i class="fa fa-line-chart"></i> Tingkat Pemesanan</h3>
+												Laporan banyaknya Pemesanan.
+											</div>
 												
-										
-									<table class="table table-bordered">
-									<thead>
-									  <tr>
-										<th>Page details</th>
-										<th style="width:100px">Actions</th>
-									  </tr>
-									</thead>
-									<tbody>
+											<div class="card-body">
+												<canvas id="lineChart"></canvas>
+											</div>							
+											<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+										</div><!-- end card-->					
+									</div>
+
+									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">						
+										<div class="card mb-3">
+											<div class="card-header">
+												<h3><i class="fa fa-bar-chart-o"></i> Mata Pelajaran Terfavorit</h3>
+												Grafik mata pelajaran yang paling banyak disukai.
+											</div>
+												
+											<div class="card-body">
+												<canvas id="pieChart"></canvas>
+											</div>
+											<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+										</div><!-- end card-->					
+									</div>
 									
-															<tr >							
-											<td>
-											<h5>Test page with redirect</h5>							<small>
-											Redirect URL: <a target="_blank" href=http://php.net/>http://php.net/</a><br />																												</small>
-											</td>
-											
-											
-											<td>
-												<a href="#" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" data-title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>								
-												<a href="javascript:deleteRecord_13('13');" class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip" data-title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-												<script>
-												function deleteRecord_13(RecordId)
-												{
-													if (confirm('Confirm delete')) {
-														window.location.href = '#';
-													}
-												}
-												</script>
-											</td>
-										</tr>
-															<tr >							
-											<td>
-											<h5>Terms of use</h5><p>Lorem ipsum dolor sit amet, probo omnis fugit vis in.&nbsp;Tale summo quaeque vim eu, pro sumo omnium at. Ad illud facilisi vix, nostrud dolores expetenda id vim. Et affert constituto percipitur qui. Ad purto choro has.Consul erroribus pri ut.&nbsp;Has no veniam consul molestie. Id eum zril graece, cu iusto alterum dignissim sit. Eos possit dictas no, eu accusamus necessitatibus sit. Per blandit voluptaria an, case illum error cu nec.Quaestio antiopam ut has, erant maluisset et vix. Error movet </p>							<small>
-																		Meta title: Lorem ipsum dolor sit amet<br />							Meta description: Suspendisse eros urna, malesuada quis est vel, mattis ornare magna<br />							Meta keywords: keyword1, keyword2							</small>
-											</td>
-											
-											
-											<td>
-												<a href="#" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" data-title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>								
-												<a href="javascript:deleteRecord_6('6');" class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip" data-title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-												<script>
-												function deleteRecord_6(RecordId)
-												{
-													if (confirm('Confirm delete')) {
-														window.location.href = '#';
-													}
-												}
-												</script>
-											</td>
-										</tr>
-															<tr >							
-											<td>
-											<h5>Privacy</h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis urna et sapien malesuada sagittis. Proin id elementum mi. Donec vitae augue hendrerit, laoreet enim gravida, varius magna. Sed placerat sollicitudin purus, quis scelerisque sapien cursus ut. Nunc dui ligula, ornare semper nisi eu, laoreet gravida lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse sodales fringilla iaculis. Ut vitae imperdiet elit. Ut feugiat, sapien a rutrum rhoncus, nibh mi place</p>							<small>
-																		Meta title: Privacy meta title<br />							Meta description: Privacy meta description<br />														</small>
-											</td>
-											
-											
-											<td>
-												<a href="#" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" data-title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a>								
-												<a href="javascript:deleteRecord_4('4');" class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip" data-title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-												<script>
-												function deleteRecord_4(RecordId)
-												{
-													if (confirm('Confirm delete')) {
-														window.location.href = '#';
-													}
-												}
-												</script>
-											</td>
-										</tr>
-									</tbody>
-									</table>
-								  
-																	
+									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">						
+										<div class="card mb-3">
+											<div class="card-header">
+												<h3><i class="fa fa-bar-chart-o"></i> Mata Pelajaran Yang Tidak Dikuasai</h3>
+												Grafik mata pelajaran yang tidak dikuasai.
+											</div>
 												
-									</div>	
-									<!-- end card-body -->								
-										
-								</div>
-								<!-- end card -->					
-
+											<div class="card-body">
+												<canvas id="doughnutChart"></canvas>
+											</div>
+											<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+										</div><!-- end card-->					
+									</div>
+									
 							</div>
-							<!-- end col -->	
-																
-						</div>
-						<!-- end row -->	
-
-
-
-            </div>
-			<!-- END container-fluid -->
-
-		</div>
+							<!-- end row -->
 		<!-- END content -->
-
     </div>
 	<!-- END content-page -->
     
@@ -513,7 +483,7 @@
 <script src="assets/js/modernizr.min.js"></script>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/moment.min.js"></script>
-
+		
 <script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 
@@ -521,14 +491,130 @@
 <script src="assets/js/fastclick.js"></script>
 <script src="assets/js/jquery.blockUI.js"></script>
 <script src="assets/js/jquery.nicescroll.js"></script>
-<script src="assets/js/jquery.scrollTo.min.js"></script>
-<script src="assets/plugins/switchery/switchery.min.js"></script>
 
 <!-- App js -->
 <script src="assets/js/pikeadmin.js"></script>
 
 <!-- BEGIN Java Script for this page -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 
+	<!-- Counter-Up-->
+	<script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+	<script src="assets/plugins/counterup/jquery.counterup.min.js"></script>			
+
+	<script>
+		$(document).ready(function() {
+			// data-tables
+			$('#example1').DataTable();
+					
+			// counter-up
+			$('.counter').counterUp({
+				delay: 10,
+				time: 600
+			});
+		} );		
+	</script>
+	
+	<script>
+	var ctx1 = document.getElementById("lineChart").getContext('2d');
+	var lineChart = new Chart(ctx1, {
+		type: 'bar',
+		data: {
+			labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+			datasets: [{
+					label: 'Online',
+					backgroundColor: '#3EB9DC',
+					data: [10, 14, 6, 7, 13, 9, 13, 16, 11, 8, 12, 9] 
+				}, {
+					label: 'Offline',
+					backgroundColor: '#EBEFF3',
+					data: [12, 14, 6, 7, 13, 6, 13, 16, 10, 8, 11, 12]
+				}]
+				
+		},
+		options: {
+						tooltips: {
+							mode: 'index',
+							intersect: false
+						},
+						responsive: true,
+						scales: {
+							xAxes: [{
+								stacked: true,
+							}],
+							yAxes: [{
+								stacked: true
+							}]
+						}
+					}
+	});
+
+
+	var ctx2 = document.getElementById("pieChart").getContext('2d');
+	var pieChart = new Chart(ctx2, {
+		type: 'pie',
+		data: {
+				datasets: [{
+					data: [12, 19, 8, 10, 7, 6],
+					backgroundColor: [
+						'rgba(255,99,132,1)',
+						'rgba(54, 162, 235, 1)',
+						'rgba(255, 206, 86, 1)',
+						'rgba(75, 192, 192, 1)',
+						'rgba(153, 102, 255, 1)',
+						'rgba(255, 159, 64, 1)'
+					],
+					label: 'Mata Pelajaran'
+				}],
+				labels: [
+					"Bahasa Indonesia",
+					"Matematika",
+					"PKN",
+					"IPS",
+					"IPA",
+                    "Bahasa Inggris"
+				]
+			},
+			options: {
+				responsive: true
+			}
+	 
+	});
+
+
+	var ctx3 = document.getElementById("doughnutChart").getContext('2d');
+	var doughnutChart = new Chart(ctx3, {
+		type: 'doughnut',
+		data: {
+				datasets: [{
+					data: [12, 19, 8, 10, 7, 6],
+                    backgroundColor: [
+                        'rgba(255,99,132,1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    label: 'Mata Pelajaran'
+                }],
+                labels: [
+                    "Bahasa Indonesia",
+                    "Matematika",
+                    "PKN",
+                    "IPS",
+                    "IPA",
+                    "Bahasa Inggris"
+                ]
+			},
+			options: {
+				responsive: true
+			}
+	 
+	});
+	</script>
 <!-- END Java Script for this page -->
 
 </body>

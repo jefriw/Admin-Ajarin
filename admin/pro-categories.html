@@ -21,8 +21,8 @@
 		<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 		
 		<!-- Custom CSS -->
-		<link href="assets/css/style.css" rel="stylesheet" type="text/css" />		
-		
+		<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+	
 		<!-- BEGIN CSS for this page -->
 
 		<!-- END CSS for this page -->
@@ -333,9 +333,9 @@
 								<li><a href="pro-profile.html">My Profile</a></li>
                                 <li><a href="pro-users.html">Users</a></li>
                                 <li><a href="pro-articles.html">Articles</a></li>
-                                <li><a href="pro-categories.html">Categories</a></li>
+                                <li class="active"><a href="pro-categories.html">Categories</a></li>
 								<li><a href="pro-pages.html">Pages</a></li>								
-                                <li class="active"><a href="pro-contact-messages.html">Contact Messages</a></li>
+                                <li><a href="pro-contact-messages.html">Contact Messages</a></li>
 								<li><a href="pro-slider.html">Slider</a></li>
                             </ul>
                     </li>
@@ -362,115 +362,274 @@
 			<div class="container-fluid">
 
 					
-							<div class="row">
-	<div class="col-xl-12">
-		<div class="breadcrumb-holder">
-			<h1 class="main-title float-left">Contact Messages</h1>
-            <ol class="breadcrumb float-right">
-			<li class="breadcrumb-item">Home</li>
-			<li class="breadcrumb-item active">Contact Messages</li>
-            </ol>
-            <div class="clearfix"></div>
-        </div>
-	</div>
-</div>
-<!-- end row -->
+					<div class="row">
+						<div class="col-xl-12">
+							<div class="breadcrumb-holder">
+								<h1 class="main-title float-left">Categories</h1>
+								<ol class="breadcrumb float-right">
+								<li class="breadcrumb-item">Home</li>
+								<li class="breadcrumb-item active">Categories</li>
+								</ol>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+					<!-- end row -->
 
-            
-						<div class="alert alert-danger" role="alert">
-						<h4 class="alert-heading">Important!</h4>
-						<p>This section is available in Pike Admin PRO version.</p>
-						<p><b>Save over 50 hours of development with our Pro Framework: Registration / Login / Users Management, CMS, Front-End Template (who will load contend added in admin area and saved in MySQL database), Contact Messages Management, manage Website Settings and many more, at an incredible price!</b></p>
-						<p>Read more about all PRO features here: <a target="_blank" href="https://www.pikeadmin.com/pike-admin-pro"><b>Pike Admin PRO features</b></a></p>
-						</div>			
 			
-<div class="row">
 			
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">						
-				
-		<div class="card mb-3">
-		
-			<div class="card-header">
-			<h3><i class="fa fa-envelope-o"></i> All contact messages (2 messages)</h3>								
-			</div>
-			<!-- end card-header -->	
-						
-			<div class="card-body">
+					<div class="row">
+								
+						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">						
+									
+							<div class="card mb-3">
+							
+								<div class="card-header">
+								<span class="pull-right"><button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_add_category"><i class="fa fa-plus" aria-hidden="true"></i> Add new category</button></span>
+								<div class="modal fade custom-modal" tabindex="-1" role="dialog" aria-hidden="true" id="modal_add_category">
+							<div class="modal-dialog">
+							<div class="modal-content">
+								
+								<form action="#" method="post">
+
+												
+								<div class="modal-header">
+								<h5 class="modal-title">Add new category</h5>
+								<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>          	
+								</div>
+									
+								<div class="modal-body">                
+													
+									<div class="row">
+										<div class="col-lg-12">
+										<div class="form-group">
+										<label>Category title (required)</label>
+										<input class="form-control" name="title" type="text" required />
+										</div>
+										</div>
+									</div>
+									
+									<div class="row">
+										<div class="col-lg-12">
+										<div class="form-group">
+										<label>Description (optional)</label>
+										<textarea class="form-control" name="description" rows="5"></textarea>
+										</div>
+										</div>  
+									</div>
+													
+									<div class="row">					                
+										<div class="col-lg-6">
+										<div class="form-group">
+										<label>Active</label>
+										<select name="active" class="form-control">
+										<option value="1">YES</option>
+										<option value="0">NO</option>
+										</select>
+										</div>
+										</div>
+									
+									</div>
+									
+								</div>             
+								
+								<div class="modal-footer">
+									<button type="button" class="btn btn-primary">Add category</button>
+								</div>
+									
+								</form>	
+								
+							</div>
+						</div>
+					</div> 
+					<h3><i class="fa fa-sitemap"></i> All categories (2 categories)</h3>								
+					</div>
+					<!-- end card-header -->	
+								
+					<div class="card-body">
 								
 								
 						
-					<table class="table table-bordered">
-                    <thead>
-                      <tr>
-                        <th>Message details</th>
-                        <th style="width:350px">Sender details</th>
-						<th style="width:120px">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody>
+							<table class="table table-bordered">
+							<thead>
+							  <tr>
+								<th>Category details</th>
+								<th style="width:150px">Articles</th>
+								<th style="width:120px">Actions</th>
+							  </tr>
+							</thead>
+							<tbody>
 					
 							<tr>
 							
 							<td>
-							<span style="color:red"><b>[Unread]</b></span> <a href="pro-contact-messages-details.html"><b>I want your help please</b></a><p>Lorem ipsum dolor sit amet, probo omnis fugit vis in. Tale summo quaeque vim eu, pro sumo omnium at. Ad illud facilisi vix, nostrud dolores expetenda id vim. Et affert constituto percipitur qui. Ad purto choro has. "fdfs"fsds&#39;dfasdfsd!!! Consul erroribus pri ut. Has no veniam consul molestie...</p>							</td>
-							
-							<td>
-							John Doe<br />
-							office@mxscripts.com<br />
-							IP: 79.112.97.75							</td>
-							
-							<td>
-								<a href="pro-contact-messages-details.html" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" data-title="Read message"><i class="fa fa-search" aria-hidden="true"></i></a>
-								<a href="javascript:deleteRecord_2('2');" class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip" data-title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-								<script>
-								function deleteRecord_2(RecordId)
-								{
-									if (confirm('Confirm delete')) {
-										window.location.href = '#';
-									}
-								}
-								</script>
+							<strong>Blog</strong><br />
+							<small>Our blog articles</small>
 							</td>
-						</tr>
-                    						<tr>
+							
+							<td>2</td>
 							
 							<td>
-							<a href="pro-contact-messages-details.html"><b>Test message subject</b></a><p>I interest with your script, i wanna buy your script, but i need some change, please replay this email ASAP...</p>							</td>
-							
-							<td>
-							David Guetta<br />
-							gabriel1978@gmail.com<br />
-							IP: 192.124.125.125							</td>
-							
-							<td>
-								<a href="pro-contact-messages-details.html" class="btn btn-primary btn-sm" data-placement="top" data-toggle="tooltip" data-title="Read message"><i class="fa fa-search" aria-hidden="true"></i></a>
-								<a href="javascript:deleteRecord_1('1');" class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip" data-title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-								<script>
-								function deleteRecord_1(RecordId)
-								{
-									if (confirm('Confirm delete')) {
-										window.location.href = '#';
-									}
-								}
-								</script>
-							</td>
-						</tr>
-                    </tbody>
-					</table>
-				  
-													
-								
-					</div>	
-					<!-- end card-body -->								
-						
-				</div>
-				<!-- end card -->					
+								<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_edit_category_10"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+								<div class="modal fade custom-modal" tabindex="-1" role="dialog" aria-hidden="true" id="modal_edit_category_10">
+								<div class="modal-dialog">
+								<div class="modal-content">
+									
+									<form action="#" method="post">
 
-			</div>
-			<!-- end col -->	
-												
-		</div>
-		<!-- end row -->	
+													
+									<div class="modal-header">
+									<h5 class="modal-title">Edit category</h5>
+									<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>          	
+									</div>
+										
+									<div class="modal-body">                
+														
+										<div class="row">
+											<div class="col-lg-12">
+											<div class="form-group">
+											<label>Category title (required)</label>
+											<input class="form-control" name="title" type="text" value="Blog" required />
+											</div>
+											</div>
+										</div>
+										
+										<div class="row">
+											<div class="col-lg-12">
+											<div class="form-group">
+											<label>Description (optional)</label>
+											<textarea class="form-control" name="description" rows="5">Our blog articles</textarea>
+											</div>
+											</div>  
+										</div>
+														
+										<div class="row">					                
+											<div class="col-lg-6">
+											<div class="form-group">
+											<label>Active</label>
+											<select name="active" class="form-control">
+											<option selected="selected" value="1">YES</option>
+											<option  value="0">NO</option>
+											</select>
+											</div>
+											</div>
+										
+										</div>
+										
+									</div>             
+									
+									<div class="modal-footer">
+										<button type="button" class="btn btn-primary">Edit category</button>
+									</div>
+										
+									</form>	
+									
+									</div>
+								</div>
+							</div> 
+														<a href="javascript:deleteRecord_10('10');" class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip" data-title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+														<script>
+														function deleteRecord_10(RecordId)
+														{
+															if (confirm('Confirm delete')) {
+																window.location.href = '#';
+															}
+														}
+														</script>
+													</td>
+												</tr>
+																	<tr >
+													
+													<td>
+													<strong>News</strong>							<br />
+													<small>Latest news about our company</small>
+													</td>
+													
+													<td>6</td>
+													
+													<td>
+														<a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modal_edit_category_6"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+														<div class="modal fade custom-modal" tabindex="-1" role="dialog" aria-hidden="true" id="modal_edit_category_6">
+														<div class="modal-dialog">
+															<div class="modal-content">
+																
+																<form action="#" method="post">
+
+																				
+																<div class="modal-header">
+																<h5 class="modal-title">Edit category</h5>
+																<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>          	
+																</div>
+																	
+																<div class="modal-body">                
+																					
+																	<div class="row">
+																		<div class="col-lg-12">
+																		<div class="form-group">
+																		<label>Category title (required)</label>
+																		<input class="form-control" name="title" type="text" value="News" required />
+																		</div>
+																		</div>
+																	</div>
+																	
+																	<div class="row">
+																		<div class="col-lg-12">
+																		<div class="form-group">
+																		<label>Description (optional)</label>
+																		<textarea class="form-control" name="description" rows="5">Latest news about our company</textarea>
+																		</div>
+																		</div>  
+																	</div>
+																					
+																	<div class="row">					                
+																		<div class="col-lg-6">
+																		<div class="form-group">
+																		<label>Active</label>
+																		<select name="active" class="form-control">
+																		<option selected="selected" value="1">YES</option>
+																		<option  value="0">NO</option>
+																		</select>
+																		</div>
+																		</div>
+																	
+																	</div>
+																	
+																</div>             
+																
+																<div class="modal-footer">
+																	<button type="button" class="btn btn-primary">Edit category</button>
+																</div>
+																	
+																</form>	
+																
+															</div>
+														</div>
+													</div> 
+														<a href="javascript:deleteRecord_6('6');" class="btn btn-danger btn-sm" data-placement="top" data-toggle="tooltip" data-title="Delete"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+														<script>
+														function deleteRecord_6(RecordId)
+														{
+															if (confirm('Confirm delete')) {
+																window.location.href = '#';
+															}
+														}
+														</script>
+													</td>
+												</tr>
+											</tbody>
+											</table>
+														
+										</div>	
+										<!-- end card-body -->								
+											
+									</div>
+									<!-- end card -->					
+
+								</div>
+								<!-- end col -->	
+																	
+							</div>
+							<!-- end row -->	
 
 
 
