@@ -28,10 +28,10 @@
 
 <body class="adminbody">
 <?php 
-session_start();
-if($_SESSION['status']!="login"){
-    header("location:../index.php?pesan=belum_login");
-}
+    session_start();
+    if($_SESSION['status']!="login"){
+        header("location:../index.php?pesan=belum_login");
+    }
 ?>
 <div id="main">
 
@@ -187,7 +187,7 @@ if($_SESSION['status']!="login"){
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5 class="text-overflow"><small>Hello, admin</small> </h5>
+                                    <h5 class="text-overflow"><small>Hello, <?php echo $_SESSION['username']; ?></small> </h5>
                                 </div>
 
                                 <!-- item-->
@@ -196,7 +196,7 @@ if($_SESSION['status']!="login"){
                                 </a>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">
+                                <a href="../logout.php" class="dropdown-item notify-item">
                                     <i class="fa fa-power-off"></i> <span>Logout</span>
                                 </a>
 								
