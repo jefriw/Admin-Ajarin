@@ -2,6 +2,9 @@
 // mengaktifkan session
 session_start();
 
+//menghapus session
+unset($_SESSION['username']);
+unset($_SESSION['status']);
 // menghapus semua session
 session_destroy();
 

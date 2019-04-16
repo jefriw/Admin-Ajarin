@@ -3,44 +3,47 @@
 <head>
 	<title>Login</title>
 </head>
-<body>
-	<!-- cek pesan notifikasi -->
-	<?php 
-	if(isset($_GET['pesan'])){
-		if($_GET['pesan'] == "gagal"){
-			echo "Login gagal! username dan password salah!";
-		}else if($_GET['pesan'] == "logout"){
-			echo "Anda telah berhasil logout";
-		}else if($_GET['pesan'] == "belum_login"){
-			echo "Anda harus login untuk mengakses halaman admin";
-		}
+<script type="text/javascript">
+	function act(btn)
+	{
+		var username = document.getElementById('username').value;
+		var pass = document.getElementById('password').value;
+		var url = "action.php?username="+username+"&pass="+pass+"&btn="+btn;
+
+		location.href=url;
 	}
-	?>
-	<br/>
-	<br/>
-	<form method="post" action="cek_login.php">
-		<table>
-			<tr>
-				<td>Username</td>
-				<td>:</td>
-				<td><input type="text" name="username" placeholder="Masukkan username"></td>
-			</tr>
-			<tr>
-				<td>Password</td>
-				<td>:</td>
-				<td><input type="password" name="password" placeholder="Masukkan password"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td><input type="submit" value="LOGIN"></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td><a href="register.php">Register</a></td>
-			</tr>
-		</table>			
-	</form>
+</script>
+<body>
+<link href="admin/assets/css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="admin/assets/js/bootstrap.min.js"></script>
+<script src="admin/assets/js/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="" id="icon" alt="Icon" />
+      <p>Login</p>
+    </div>
+
+    <!-- Login Form -->
+    <form>
+      <input type="text" id="username" class="fadeIn second" name="login" placeholder="login">
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="password">
+      <input type="button" name="btn" id="btn" class="fadeIn fourth" value="Login" onclick="act(this.value)">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="register.php">Register</a>
+    </div>
+
+  </div>
+</div>
 </body>
 </html>
+
