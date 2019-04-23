@@ -3,7 +3,7 @@
 include "koneksi.php";
 
 $name = $_GET['username'];
-$pass = md5($_GET['pass']);
+$pass = md5(md5($_GET['pass']),"As14p");
 $btn = $_GET['btn'];
 
 if($btn=="Register"){

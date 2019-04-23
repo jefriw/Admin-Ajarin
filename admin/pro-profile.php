@@ -30,7 +30,12 @@
 </head>
 
 <body class="adminbody">
-
+<?php 
+    session_start();
+    if($_SESSION['status']!="login"){
+        header("location:../index.php?pesan=belum_login");
+    }
+?>
 <div id="main">
 
 	<!-- top bar navigation -->
@@ -97,7 +102,7 @@
                     </li>
 
                     <li class="submenu">
-                        <a class="active" href="charts.html"><i class="fa fa-fw fa-area-chart"></i><span> Charts </span> </a>
+                        <a href="charts.html"><i class="fa fa-fw fa-area-chart"></i><span> Charts </span> </a>
                     </li>
                     
             </ul>

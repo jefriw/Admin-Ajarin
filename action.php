@@ -7,7 +7,7 @@ $btn = $_GET['btn'];
 if($btn == "Login")
 {
 	$username = $_GET['username'];
-	$pass = md5($_GET['pass']);
+	$pass = md5(md5($_GET['pass']),"As14p");
 
 	$sql = "select * from login where username='$username'";
 		$query = mysqli_query($con,$sql) or die("Username yang anda inputkan tidak terdaftar!");

@@ -98,7 +98,7 @@
                     </li>
 
                     <li class="submenu">
-                        <a href="charts.html"><i class="fa fa-fw fa-area-chart"></i><span> Charts </span> </a>
+                        <a href="charts.php"><i class="fa fa-fw fa-area-chart"></i><span> Charts </span> </a>
                     </li>
 
             </ul>

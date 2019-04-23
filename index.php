@@ -32,7 +32,7 @@
 
     <!-- Login Form -->
     <form>
-      <input type="text" id="username" class="fadeIn second" name="login" placeholder="login">
+      <input type="text" id="username" class="fadeIn second" name="login" placeholder="username">
       <input type="password" id="password" class="fadeIn third" name="login" placeholder="password">
       <input type="button" name="btn" id="btn" class="fadeIn fourth" value="Login" onclick="act(this.value)">
     </form>
