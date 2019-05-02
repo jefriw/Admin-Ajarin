@@ -46,7 +46,7 @@
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5 class="text-overflow"><small>Hello,</small> </h5>
+                                    <h5 class="text-overflow"><small id="masuk"></small> </h5>
                                 </div>
 
                                 <!-- item-->
@@ -250,20 +250,8 @@
 
 	<!-- firebase -->
 	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyAP_lJoCoBzIyiiM58yU76JOHzUxKa_wwE",
-	    authDomain: "ajarin-f515.firebaseapp.com",
-	    databaseURL: "https://ajarin-f515.firebaseio.com",
-	    projectId: "ajarin-f515",
-	    storageBucket: "ajarin-f515.appspot.com",
-	    messagingSenderId: "670749567079"
-	  };
-	  firebase.initializeApp(config);
-	</script>
-
-	<script src="../login.js"></script>
+	<script src="../firebase.js"></script>
+	<script src="function.js"></script>
 
 	<script>
 		$(document).ready(function() {

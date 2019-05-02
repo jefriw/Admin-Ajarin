@@ -30,12 +30,6 @@
 </head>
 
 <body class="adminbody">
-<?php 
-    session_start();
-    if($_SESSION['status']!="login"){
-        header("location:../index.php?pesan=belum_login");
-    }
-?>
 <div id="main">
 
 	<!-- top bar navigation -->
@@ -57,7 +51,7 @@
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5 class="text-overflow"><small>Hello, <?php echo $_SESSION['username']; ?></small> </h5>
+                                    <h5 class="text-overflow"><small id="masuk"></small> </h5>
                                 </div>
 
                                 <!-- item-->
@@ -66,7 +60,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="#" class="dropdown-item notify-item">
+                                <a href="#" class="dropdown-item notify-item" onclick="logout()">
                                     <i class="fa fa-power-off"></i> <span>Logout</span>
                                 </a>
                             </div>
@@ -160,41 +154,27 @@
 												
 												<div class="col-lg-9 col-xl-9">
 													
-													<div class="row">				
-														<div class="col-lg-6">
-														<div class="form-group">
-														<label>Full name (required)</label>
-														<input class="form-control" name="name" type="text" value="<?php $_SESSION['username']; ?>" required />
-														</div>
-														</div>
-
-														<div class="col-lg-6">
+													<div class="row">
+														<div class="col-lg-12">
 														<div class="form-group">
 														<label>Valid Email (required)</label>
-														<input class="form-control" name="email" type="email" value="office@website.com" required />
+														<input class="form-control" name="email" type="email" value="" id="v_email" required />
 														</div>
 														</div>  
 													</div>
 													
 													<div class="row">				
-														<div class="col-lg-6">
+														<div class="col-lg-12">
 														<div class="form-group">
 														<label>Password (leave empty not to change)</label>
 														<input class="form-control" name="password" type="password" value="" />
 														</div>
-														</div>              			                                
-														
-														<div class="col-lg-6">
-														<div class="form-group">
-														<label>Skype</label>
-														<input class="form-control" name="skype" type="text" value="skypeid" />
-														</div>
-														</div>   
+														</div>  
 													</div>
 													
 													<div class="row">
 														<div class="col-lg-12">
-														<button type="button" class="btn btn-primary">Edit profile</button>
+														<button type="button" class="btn btn-primary" onclick="edit()">Edit profile</button>
 														</div>
 													</div>
 												
@@ -205,9 +185,7 @@
 												<div class="col-lg-3 col-xl-3 border-left">
 													<b>Latest activity</b>: Dec 06 2017, 22:23	
 													<br />
-													<b>Register date: </b>: Nov 24 2017, 20:32	
-													<br />
-													<b>Register IP: </b>: 123.456.789
+													<b>Register date: </b>: Nov 24 2017, 20:32
 													
 													<div class="m-b-10"></div>
 													
@@ -284,6 +262,11 @@
 <script src="assets/js/pikeadmin.js"></script>
 
 <!-- BEGIN Java Script for this page -->
+
+	<!-- firebase -->
+	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+	<script src="../firebase.js"></script>
+	<script src="function.js"></script>
 
 <!-- END Java Script for this page -->
 

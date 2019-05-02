@@ -32,26 +32,9 @@
 
   </div>
 </div>
-<div id="udh">
-      <input type="text" class="fadeIn second" placeholder="email" id="email">
-      <p id="logg">Berhasil login</p>
-      <input type="password" class="fadeIn third" placeholder="password" id="pword">
-      <button class="button" onclick="logout()">Logout</button>
-</div>
-<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyAP_lJoCoBzIyiiM58yU76JOHzUxKa_wwE",
-    authDomain: "ajarin-f515.firebaseapp.com",
-    databaseURL: "https://ajarin-f515.firebaseio.com",
-    projectId: "ajarin-f515",
-    storageBucket: "ajarin-f515.appspot.com",
-    messagingSenderId: "670749567079"
-  };
-  firebase.initializeApp(config);
-</script>
-
+  <!-- firebase -->
+  <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+  <script src="firebase.js"></script>
 <script src="login.js"></script>
 </body>
 </html>

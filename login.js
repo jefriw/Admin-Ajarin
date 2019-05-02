@@ -1,22 +1,19 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-    document.getElementById('sblm').style.display = "none";
-    document.getElementById('udh').style.display = "flex";
+    window.location = 'admin/';
 
-    var user = firebase.auth().currentUser;
-
-    if(user != null){
-      var email_id = user.email;
-      document.getElementById('logg').innerHTML = email_id + " Berhasil loggin";
-    }
   } else {
     // No user is signed in.
-    document.getElementById('sblm').style.display = "flex";
-    document.getElementById('udh').style.display = "none";
-
   }
 });
+
+$(document).keypress(function(event){
+
+    if(event.which == 13){
+      login();
+    }
+  });
 
 function login(){
   // window.alert("test");
@@ -31,8 +28,4 @@ function login(){
 
     window.alert("Error : " + errorMessage);
   });
-}
-
-function logout(){
-  firebase.auth().signOut();
 }

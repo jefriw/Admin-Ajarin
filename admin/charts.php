@@ -27,12 +27,6 @@
 </head>
 
 <body class="adminbody">
-<?php 
-    session_start();
-    if($_SESSION['status']!="login"){
-        header("location:../index.php?pesan=belum_login");
-    }
-?>
 <div id="main">
 
 	<!-- top bar navigation -->
@@ -40,7 +34,7 @@
 
 		<!-- LOGO -->
         <div class="headerbar-left">
-			<a href="index.html" class="logo"><img alt="logo" src="assets/images/logo.png" /> <span>Admin</span></a>
+			<a href="index.html" class="logo"><img alt="logo" src="assets/images/logo.png" /> <span>Ajarin</span></a>
         </div>
 
         <nav class="navbar-custom">
@@ -53,7 +47,7 @@
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5 class="text-overflow"><small>Hello, <?php echo $_SESSION['username']; ?></small> </h5>
+                                    <h5 class="text-overflow"><small id="masuk"></small> </h5>
                                 </div>
 
                                 <!-- item-->
@@ -62,7 +56,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="logout.php" class="dropdown-item notify-item">
+                                <a href="#" class="dropdown-item notify-item" onclick="logout()">
                                     <i class="fa fa-power-off"></i> <span>Logout</span>
                                 </a>
                             </div>
@@ -225,10 +219,6 @@
 							
 					</div>
 					<!-- end row -->
-								
-
-
-
             </div>
 			<!-- END container-fluid -->
 
@@ -267,6 +257,11 @@
 
 <!-- BEGIN Java Script for this page -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+	<!-- firebase -->
+	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+	<script src="../firebase.js"></script>
+	<script src="function.js"></script>
 	
 	<script>
 	// barChart
