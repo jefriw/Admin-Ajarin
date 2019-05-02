@@ -1,10 +1,6 @@
 
 /* BASIC */
 
-html {
-  background-color: #56ba98;
-}
-
 body {
   font-family: "Roboto", sans-serif;
   height: 100vh;
@@ -81,7 +77,7 @@ h2.active {
 
 /* FORM TYPOGRAPHY*/
 
-input[type=button], input[type=submit], input[type=reset]  {
+.button, input[type=submit], input[type=reset]  {
   background-color: #56baed;
   border: none;
   color: white;
@@ -103,11 +99,11 @@ input[type=button], input[type=submit], input[type=reset]  {
   transition: all 0.3s ease-in-out;
 }
 
-input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+.button:hover, input[type=submit]:hover, input[type=reset]:hover  {
   background-color: #39ace7;
 }
 
-input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+.button:active, input[type=submit]:active, input[type=reset]:active  {
   -moz-transform: scale(0.95);
   -webkit-transform: scale(0.95);
   -o-transform: scale(0.95);
@@ -145,7 +141,7 @@ input[type=text]:placeholder, input[type=password]:placeholder {
   color: #cccccc;
 }
 
-input[type=button]{
+.button{
   min-width: 85%;
 }
 

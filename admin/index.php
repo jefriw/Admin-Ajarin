@@ -26,14 +26,7 @@
 		
 </head>
 
-<body class="adminbody">
-<?php 
-    session_start();
-    if($_SESSION['status']!="login"){
-        header("location:../index.php?pesan=belum_login");
-    }
-?>
-<div id="main">
+<body class="adminbody"><div id="main">
 
 	<!-- top bar navigation -->
 	<div class="headerbar">
@@ -53,7 +46,7 @@
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5 class="text-overflow"><small>Hello, <?php echo $_SESSION['username']; ?></small> </h5>
+                                    <h5 class="text-overflow"><small>Hello,</small> </h5>
                                 </div>
 
                                 <!-- item-->
@@ -62,7 +55,7 @@
                                 </a>
 
                                 <!-- item-->
-                                <a href="logout.php" class="dropdown-item notify-item">
+                                <a href="#" class="dropdown-item notify-item" onclick="logout()">
                                     <i class="fa fa-power-off"></i> <span>Logout</span>
                                 </a>
                             </div>
@@ -253,7 +246,24 @@
 
 	<!-- Counter-Up-->
 	<script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
-	<script src="assets/plugins/counterup/jquery.counterup.min.js"></script>			
+	<script src="assets/plugins/counterup/jquery.counterup.min.js"></script>
+
+	<!-- firebase -->
+	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyAP_lJoCoBzIyiiM58yU76JOHzUxKa_wwE",
+	    authDomain: "ajarin-f515.firebaseapp.com",
+	    databaseURL: "https://ajarin-f515.firebaseio.com",
+	    projectId: "ajarin-f515",
+	    storageBucket: "ajarin-f515.appspot.com",
+	    messagingSenderId: "670749567079"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+
+	<script src="../login.js"></script>
 
 	<script>
 		$(document).ready(function() {
