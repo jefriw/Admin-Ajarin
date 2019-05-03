@@ -23,6 +23,10 @@
 		<!-- BEGIN CSS for this page -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
 		<!-- END CSS for this page -->
+	<!-- firebase -->
+	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+	<script src="../firebase.js"></script>
+	<script src="function.js"></script>
 		
 </head>
 
@@ -137,7 +141,7 @@
 							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">						
 								<div class="card mb-3">
 									<div class="card-header">
-										<i class="fa fa-table"></i> Bar Chart
+										<i class="fa fa-table"></i> Statistik Penerimaan
 									</div>
 										
 									<div class="card-body">
@@ -150,7 +154,7 @@
 							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">						
 								<div class="card mb-3">
 									<div class="card-header">
-										<i class="fa fa-table"></i> Combo Bar Line Chart
+										<i class="fa fa-table"></i> Statistik Orderan
 									</div>
 										
 									<div class="card-body">
@@ -175,7 +179,7 @@
 										<canvas id="pieChart"></canvas>
 									</div>
 									<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-								</div><!-- end card-->					
+								</div>					
 							</div>
 							
 							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">						
@@ -188,7 +192,7 @@
 										<canvas id="doughnutChart"></canvas>
 									</div>
 									<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-								</div><!-- end card-->					
+								</div>					
 							</div>
 							
 							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">						
@@ -201,7 +205,7 @@
 										<canvas id="radarChart"></canvas>
 									</div>
 									<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-								</div><!-- end card-->					
+								</div>					
 							</div>
 							
 							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">						
@@ -214,7 +218,7 @@
 										<canvas id="polarAreaChart"></canvas>
 									</div>
 									<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-								</div><!-- end card-->					
+								</div>					
 							</div>
 							
 					</div>
@@ -258,10 +262,6 @@
 <!-- BEGIN Java Script for this page -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
-	<!-- firebase -->
-	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-	<script src="../firebase.js"></script>
-	<script src="function.js"></script>
 	
 	<script>
 	// barChart
@@ -323,11 +323,11 @@
 			labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
 			datasets: [{
 					type: 'line',
-					label: 'Jumlah Pembatalan',
+					label: 'Orderan',
 					borderColor: '#484c4f',
 					borderWidth: 3,
 					fill: false,
-					data: [12, 19, 3, 5, 2, 3, 13, 17, 11, 8, 11, 9],
+					data: [8, 12, 7, 5, 9, 3, 13, 17, 11, 8, 11, 9],
 				}, {
 					type: 'bar',
 					label: 'Online',

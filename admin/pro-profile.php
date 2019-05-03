@@ -26,6 +26,10 @@
 		<!-- BEGIN CSS for this page -->
 
 		<!-- END CSS for this page -->
+	<!-- firebase -->
+	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+	<script src="../firebase.js"></script>
+	<script src="function.js"></script>
 				
 </head>
 
@@ -263,10 +267,6 @@
 
 <!-- BEGIN Java Script for this page -->
 
-	<!-- firebase -->
-	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-	<script src="../firebase.js"></script>
-	<script src="function.js"></script>
 
 <!-- END Java Script for this page -->
 

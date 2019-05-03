@@ -23,6 +23,10 @@
 		<!-- BEGIN CSS for this page -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
 		<!-- END CSS for this page -->
+	<!-- firebase -->
+	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+	<script src="../firebase.js"></script>
+	<script src="function.js"></script>
 		
 </head>
 
@@ -134,7 +138,7 @@
 											<div class="card-box noradius noborder bg-default">
 													<i class="fa fa-file-text-o float-right text-white"></i>
 													<h6 class="text-white text-uppercase m-b-20">Pemesanan</h6>
-													<h1 class="m-b-20 text-white counter">1,587</h1>
+													<h1 class="m-b-20 text-white counter">352</h1>
 													<span class="text-white">15 Pesanan baru</span>
 											</div>
 									</div>
@@ -143,8 +147,8 @@
 											<div class="card-box noradius noborder bg-warning">
 													<i class="fa fa-bar-chart float-right text-white"></i>
 													<h6 class="text-white text-uppercase m-b-20">Pengunjung</h6>
-													<h1 class="m-b-20 text-white counter">250</h1>
-													<span class="text-white">Bounce rate: 25%</span>
+													<h1 class="m-b-20 text-white counter">147</h1>
+													<span class="text-white">8 Pengunjung hari ini<span>
 											</div>
 									</div>
 
@@ -152,7 +156,7 @@
 											<div class="card-box noradius noborder bg-info">
 													<i class="fa fa-user-o float-right text-white"></i>
 													<h6 class="text-white text-uppercase m-b-20">User</h6>
-													<h1 class="m-b-20 text-white counter">120</h1>
+													<h1 class="m-b-20 text-white counter">118</h1>
 													<span class="text-white">25 New Users</span>
 											</div>
 									</div>
@@ -181,8 +185,8 @@
 									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">						
 										<div class="card mb-3">
 											<div class="card-header">
-												<h3><i class="fa fa-bar-chart-o"></i> Mata Pelajaran Terfavorit</h3>
-												Grafik mata pelajaran yang paling banyak disukai.
+												<h3><i class="fa fa-bar-chart-o"></i> Matapelajaran Yang Sering Dipesan</h3>
+												Grafik mata pelajaran yang paling banyak dipesan.
 											</div>
 												
 											<div class="card-body">
@@ -195,8 +199,8 @@
 									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">						
 										<div class="card mb-3">
 											<div class="card-header">
-												<h3><i class="fa fa-bar-chart-o"></i> Mata Pelajaran Yang Tidak Dikuasai</h3>
-												Grafik mata pelajaran yang tidak dikuasai.
+												<h3><i class="fa fa-bar-chart-o"></i> Matapelajaran Yang Kurang Diminati</h3>
+												Grafik mata pelajaran yang tidak kurang disukai.
 											</div>
 												
 											<div class="card-body">
@@ -248,10 +252,6 @@
 	<script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
 	<script src="assets/plugins/counterup/jquery.counterup.min.js"></script>
 
-	<!-- firebase -->
-	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-	<script src="../firebase.js"></script>
-	<script src="function.js"></script>
 
 	<script>
 		$(document).ready(function() {
@@ -338,7 +338,7 @@
 		type: 'doughnut',
 		data: {
 				datasets: [{
-					data: [12, 19, 8, 10, 7, 6],
+					data: [6, 10, 5, 4, 7, 5],
                     backgroundColor: [
                         'rgba(255,99,132,1)',
                         'rgba(54, 162, 235, 1)',

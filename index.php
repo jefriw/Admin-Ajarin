@@ -8,6 +8,10 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="admin/assets/js/bootstrap.min.js"></script>
 <script src="admin/assets/js/jquery.min.js"></script>
+<!-- firebase -->
+<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
+<script src="firebase.js"></script>
+<script src="login.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <div id="sblm" class="wrapper fadeInDown">
@@ -27,15 +31,11 @@
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="register.php">Register</a>
+      
     </div>
 
   </div>
 </div>
-  <!-- firebase -->
-  <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-  <script src="firebase.js"></script>
-<script src="login.js"></script>
 </body>
 </html>
 
