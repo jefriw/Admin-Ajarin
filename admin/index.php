@@ -33,39 +33,117 @@
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
 <script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAP_lJoCoBzIyiiM58yU76JOHzUxKa_wwE",
-    authDomain: "ajarin-f515.firebaseapp.com",
-    databaseURL: "https://ajarin-f515.firebaseio.com",
-    projectId: "ajarin-f515",
-    storageBucket: "ajarin-f515.appspot.com",
-    messagingSenderId: "670749567079",
-    appId: "1:670749567079:web:47f5ed922a2f33ae"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  
-  let db = firebase.firestore();
-  let totalGuru = 0;
-  db.collection("users").where("profession", "==", "Guru").get().then(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-        totalGuru++;
-        console.log("Total guru adalah: " + totalGuru);
-    });
-});
+	// Your web app's Firebase configuration
+	var firebaseConfig = {
+	apiKey: "AIzaSyAP_lJoCoBzIyiiM58yU76JOHzUxKa_wwE",
+	authDomain: "ajarin-f515.firebaseapp.com",
+	databaseURL: "https://ajarin-f515.firebaseio.com",
+	projectId: "ajarin-f515",
+	storageBucket: "ajarin-f515.appspot.com",
+	messagingSenderId: "670749567079",
+	appId: "1:670749567079:web:47f5ed922a2f33ae"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+
+	let db = firebase.firestore();
+	let totalGuru = 0;
+	let totalMurid = 0;
+	let totalPesan = 0;
+	let totalMapel1 = 0;
+	let totalMapel2 = 0;
+	let totalMapel3 = 0;
+	let totalMapel4 = 0;
+	let totalMapel5 = 0;
+	let totalMapel6 = 0;
+
+	db.collection("orders").get().then(function(querySnapshot){
+  		querySnapshot.forEach(function(doc){
+  			totalPesan++;
+  		});
+  			document.getElementById('J_pesan').innerHTML = totalPesan;
+	});
+
+	db.collection("users").where("profession", "==", "Guru").get().then(function(querySnapshot) {
+	    querySnapshot.forEach(function(doc) {
+	        totalGuru++;
+	    });
+	        document.getElementById('J_guru').innerHTML = totalGuru;
+	});
+
+	db.collection("users").where("profession", "==", "Murid").get().then(function(querySnapshot){
+  		querySnapshot.forEach(function(doc){
+  			totalMurid++;
+  		});
+  			document.getElementById('J_murid').innerHTML = totalMurid;
+	});
+
+
+	db.collection("orders").where("subjects", "array-contains", "MTK").get().then(function(querySnapshot) {
+	    querySnapshot.forEach(function(doc) {
+	    	totalMapel1++;
+	    });
+	    	document.getElementById('mtk').innerHTML = totalMapel1;
+	    	// console.log(totalMapel1);
+	});
+
+	db.collection("orders").where("subjects", "array-contains", "PKN").get().then(function(querySnapshot) {
+	    querySnapshot.forEach(function(doc) {
+	    	totalMapel2++;
+	    });
+	    	document.getElementById('pkn').innerHTML = totalMapel2;
+	    	// console.log(totalMapel2);
+	});
+
+	db.collection("orders").where("subjects", "array-contains", "IPS").get().then(function(querySnapshot) {
+	    querySnapshot.forEach(function(doc) {
+	    	totalMapel3++;
+	    });
+	    	document.getElementById('ips').innerHTML = totalMapel3;
+	    	// console.log(totalMapel3);
+	});
+
+	db.collection("orders").where("subjects", "array-contains", "IPA").get().then(function(querySnapshot) {
+	    querySnapshot.forEach(function(doc) {
+	    	totalMapel4++;
+	    });
+	    	document.getElementById('ipa').innerHTML = totalMapel4;
+	    	// console.log(totalMapel4);
+	});
+
+	db.collection("orders").where("subjects", "array-contains", "Inggris").get().then(function(querySnapshot) {
+	    querySnapshot.forEach(function(doc) {
+	    	totalMapel5++;
+	    });
+	    	document.getElementById('bin').innerHTML = totalMapel5;
+	    	// console.log(totalMapel5);
+	});
+
+	db.collection("orders").where("subjects", "array-contains", "Sejarah").get().then(function(querySnapshot) {
+	    querySnapshot.forEach(function(doc) {
+	    	totalMapel6++;
+	    });
+	    	document.getElementById('sej').innerHTML = totalMapel6;
+	    	// console.log(totalMapel6);
+	});
 </script>
 
 <script src="function.js"></script>
 		
 <body class="adminbody"><div id="main">
 
+<div id="mtk"></div>
+<div id="ipa"></div>
+<div id="ips"></div>
+<div id="pkn"></div>
+<div id="sej"></div>
+<div id="bin"></div>
 	<!-- top bar navigation -->
 	<div class="headerbar">
 
 		<!-- LOGO -->
         <div class="headerbar-left">
-			<a href="index.html" class="logo"><img alt="Logo" src="assets/images/logo.png" /> <span>Ajarin</span></a>
+			<a href="index.php" class="logo"><img alt="Logo" src="assets/images/logo.png" /> <span>Ajarin</span></a>
         </div>
 
         <nav class="navbar-custom">
@@ -302,7 +380,7 @@
 			datasets: [{
 					label: 'Online',
 					backgroundColor: '#3EB9DC',
-					data: [10, 14, 6, 7, 13, 9, 13, 16, 11, 8, 12, 9] 
+					data: [5, 14, 6, 7, 13, 9, 13, 16, 11, 8, 12, 9] 
 				}, {
 					label: 'Offline',
 					backgroundColor: '#EBEFF3',
@@ -333,7 +411,14 @@
 		type: 'pie',
 		data: {
 				datasets: [{
-					data: [12, 19, 8, 10, 7, 6],
+					data: [
+					Number(document.getElementById('mtk').innerHTML),
+					Number(document.getElementById('pkn').innerHTML),
+					Number(document.getElementById('ips').innerHTML),
+					Number(document.getElementById('ipa').innerHTML),
+					Number(document.getElementById('bin').innerHTML),
+					Number(document.getElementById('sej').innerHTML)
+					],
 					backgroundColor: [
 						'rgba(255,99,132,1)',
 						'rgba(54, 162, 235, 1)',
@@ -345,12 +430,12 @@
 					label: 'Mata Pelajaran'
 				}],
 				labels: [
-					"Bahasa Indonesia",
 					"Matematika",
 					"PKN",
 					"IPS",
 					"IPA",
-                    "Bahasa Inggris"
+                    "Bahasa Inggris",
+                    "Sejarah"
 				]
 			},
 			options: {

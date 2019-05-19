@@ -26,13 +26,17 @@
 		<!-- BEGIN CSS for this page -->
 
 		<!-- END CSS for this page -->
-	<!-- firebase -->
-	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-	<script src="../firebase.js"></script>
-	<script src="function.js"></script>
 				
 </head>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
 
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+	<script src="../firebase.js"></script>
+	<script src="function.js"></script>
 <body class="adminbody">
 <div id="main">
 
@@ -161,8 +165,8 @@
 													<div class="row">
 														<div class="col-lg-12">
 														<div class="form-group">
-														<label>Valid Email (required)</label>
-														<input class="form-control" name="email" type="email" value="" id="v_email" required />
+														<label>Email</label>
+														<input class="form-control" name="email" type="email" id="v_email" disabled />
 														</div>
 														</div>  
 													</div>
@@ -171,7 +175,7 @@
 														<div class="col-lg-12">
 														<div class="form-group">
 														<label>Password (leave empty not to change)</label>
-														<input class="form-control" name="password" type="password" value="" />
+														<input class="form-control" name="password" type="password" id="v_password" required />
 														</div>
 														</div>  
 													</div>
@@ -184,32 +188,6 @@
 												
 												</div>
 												
-												
-												
-												<div class="col-lg-3 col-xl-3 border-left">
-													<b>Latest activity</b>: Dec 06 2017, 22:23	
-													<br />
-													<b>Register date: </b>: Nov 24 2017, 20:32
-													
-													<div class="m-b-10"></div>
-													
-													<div id="avatar_image">
-														<img alt="image" style="max-width:100px; height:auto;" src="assets/images/avatars/admin.png" />
-														<br />
-														<i class="fa fa-trash-o fa-fw"></i> <a class="delete_image" href="#">Remove avatar</a>
-																	
-													</div>  
-													<div id="image_deleted_text"></div>                      
-
-													
-													<div class="m-b-10"></div>
-													
-													<div class="form-group">
-													<label>Change avatar</label> 
-													<input type="file" name="image" class="form-control">
-													</div>
-													
-												</div>
 												</div>								
 												
 												</form>										
