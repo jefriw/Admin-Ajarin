@@ -32,9 +32,6 @@
      https://firebase.google.com/docs/web/setup#config-web-app -->
     <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
-
-	<script src="function.js"></script>
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
@@ -58,6 +55,8 @@
     });
 });
 </script>
+
+<script src="function.js"></script>
 		
 <body class="adminbody"><div id="main">
 
