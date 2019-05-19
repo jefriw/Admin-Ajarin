@@ -23,13 +23,42 @@
 		<!-- BEGIN CSS for this page -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
 		<!-- END CSS for this page -->
-	<!-- firebase -->
-	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
-	<script src="../firebase.js"></script>
-	<script src="function.js"></script>
-		
-</head>
 
+</head>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+
+	<script src="function.js"></script>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAP_lJoCoBzIyiiM58yU76JOHzUxKa_wwE",
+    authDomain: "ajarin-f515.firebaseapp.com",
+    databaseURL: "https://ajarin-f515.firebaseio.com",
+    projectId: "ajarin-f515",
+    storageBucket: "ajarin-f515.appspot.com",
+    messagingSenderId: "670749567079",
+    appId: "1:670749567079:web:47f5ed922a2f33ae"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+  let db = firebase.firestore();
+  let totalGuru = 0;
+  db.collection("users").where("profession", "==", "Guru").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        totalGuru++;
+        console.log("Total guru adalah: " + totalGuru);
+    });
+});
+</script>
+		
 <body class="adminbody"><div id="main">
 
 	<!-- top bar navigation -->
@@ -138,26 +167,26 @@
 											<div class="card-box noradius noborder bg-default">
 													<i class="fa fa-file-text-o float-right text-white"></i>
 													<h6 class="text-white text-uppercase m-b-20">Pemesanan</h6>
-													<h1 class="m-b-20 text-white counter">352</h1>
-													<span class="text-white">15 Pesanan baru</span>
+													<h1 class="m-b-20 text-white counter" id="J_pesan"></h1>
+													<span class="text-white">&nbsp;</span>
 											</div>
 									</div>
 
 									<div class="col-xs-12 col-md-6 col-lg-6 col-xl-4">
 											<div class="card-box noradius noborder bg-warning">
 													<i class="fa fa-bar-chart float-right text-white"></i>
-													<h6 class="text-white text-uppercase m-b-20">Pengunjung</h6>
-													<h1 class="m-b-20 text-white counter">147</h1>
-													<span class="text-white">8 Pengunjung hari ini<span>
+													<h6 class="text-white text-uppercase m-b-20">Guru</h6>
+													<h1 class="m-b-20 text-white counter" id="J_guru"></h1>
+													<span class="text-white">&nbsp;</span>
 											</div>
 									</div>
 
 									<div class="col-xs-12 col-md-6 col-lg-6 col-xl-4">
 											<div class="card-box noradius noborder bg-info">
 													<i class="fa fa-user-o float-right text-white"></i>
-													<h6 class="text-white text-uppercase m-b-20">User</h6>
-													<h1 class="m-b-20 text-white counter">118</h1>
-													<span class="text-white">25 New Users</span>
+													<h6 class="text-white text-uppercase m-b-20">Murid</h6>
+													<h1 class="m-b-20 text-white counter" id="J_murid"></h1>
+													<span class="text-white">&nbsp;</span>
 											</div>
 									</div>
 									</div>
@@ -251,7 +280,6 @@
 	<!-- Counter-Up-->
 	<script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
 	<script src="assets/plugins/counterup/jquery.counterup.min.js"></script>
-
 
 	<script>
 		$(document).ready(function() {

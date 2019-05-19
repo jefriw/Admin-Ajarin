@@ -23,13 +23,14 @@
 		<!-- BEGIN CSS for this page -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
 		<!-- END CSS for this page -->
+
+</head>
+
 	<!-- firebase -->
 	<script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
 	<script src="../firebase.js"></script>
 	<script src="function.js"></script>
 		
-</head>
-
 <body class="adminbody">
 <div id="main">
 
@@ -262,7 +263,7 @@
 <!-- BEGIN Java Script for this page -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
-	
+
 	<script>
 	// barChart
 	var ctx1 = document.getElementById("barChart").getContext('2d');

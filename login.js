@@ -8,12 +8,12 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-$(document).keypress(function(event){
-
-    if(event.which == 13){
-      login();
+function enter(){
+    if (event.keyCode === 13) 
+    {
+    login();
     }
-  });
+}
 
 function login(){
   // window.alert("test");
