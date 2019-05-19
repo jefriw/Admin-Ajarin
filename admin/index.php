@@ -407,43 +407,58 @@
 
 
 	var ctx2 = document.getElementById("pieChart").getContext('2d');
-	var pieChart = new Chart(ctx2, {
-		type: 'pie',
-		data: {
-				datasets: [{
-					data: [
-					Number(document.getElementById('mtk').innerHTML),
-					Number(document.getElementById('pkn').innerHTML),
-					Number(document.getElementById('ips').innerHTML),
-					Number(document.getElementById('ipa').innerHTML),
-					Number(document.getElementById('bin').innerHTML),
-					Number(document.getElementById('sej').innerHTML)
-					],
-					backgroundColor: [
-						'rgba(255,99,132,1)',
-						'rgba(54, 162, 235, 1)',
-						'rgba(255, 206, 86, 1)',
-						'rgba(75, 192, 192, 1)',
-						'rgba(153, 102, 255, 1)',
-						'rgba(255, 159, 64, 1)'
-					],
-					label: 'Mata Pelajaran'
-				}],
-				labels: [
-					"Matematika",
-					"PKN",
-					"IPS",
-					"IPA",
-                    "Bahasa Inggris",
-                    "Sejarah"
-				]
-			},
-			options: {
-				responsive: true
-			}
-	 
-	});
+	function setMapel() {
+		if (
+			document.getElementById('mtk').innerHTML == "" ||
+			document.getElementById('pkn').innerHTML == "" ||
+			document.getElementById('ips').innerHTML == "" ||
+			document.getElementById('ipa').innerHTML == "" ||
+			document.getElementById('bin').innerHTML == "" ||
+			document.getElementById('sej').innerHTML == ""
+		) {
+			setTimeout(setMapel, 150);
+		}
+		else {
+			var pieChart = new Chart(ctx2, {
+			type: 'pie',
+			data: {
+					datasets: [{
+						data: [
+						Number(document.getElementById('mtk').innerHTML),
+						Number(document.getElementById('pkn').innerHTML),
+						Number(document.getElementById('ips').innerHTML),
+						Number(document.getElementById('ipa').innerHTML),
+						Number(document.getElementById('bin').innerHTML),
+						Number(document.getElementById('sej').innerHTML)
+						],
+						backgroundColor: [
+							'rgba(255,99,132,1)',
+							'rgba(54, 162, 235, 1)',
+							'rgba(255, 206, 86, 1)',
+							'rgba(75, 192, 192, 1)',
+							'rgba(153, 102, 255, 1)',
+							'rgba(255, 159, 64, 1)'
+						],
+						label: 'Mata Pelajaran'
+					}],
+					labels: [
+						"Matematika",
+						"PKN",
+						"IPS",
+						"IPA",
+						"Bahasa Inggris",
+						"Sejarah"
+					]
+				},
+				options: {
+					responsive: true
+				}
+		
+		});
+		}
+	}
 
+	setMapel();
 
 	var ctx3 = document.getElementById("doughnutChart").getContext('2d');
 	var doughnutChart = new Chart(ctx3, {
