@@ -162,7 +162,7 @@
 
 		<!-- LOGO -->
         <div class="headerbar-left">
-			<a href="index.php" class="logo"><img alt="Logo" src="assets/images/logo.png" /> <span>Ajarin</span></a>
+			<a href="" class="logo"><img alt="Logo" src="assets/images/logo.png" /> <span>Ajarin</span></a>
         </div>
 
         <nav class="navbar-custom">
@@ -216,7 +216,7 @@
 			<ul>
 
                     <li class="submenu">
-                        <a class="active" href="#"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
+                        <a class="active" href=""><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
                     </li>
 
             </ul>
@@ -288,20 +288,6 @@
 
 							
 							<div class="row">
-							
-									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-8">						
-										<div class="card mb-3">
-											<div class="card-header">
-												<h3><i class="fa fa-line-chart"></i> Tingkat Pemesanan</h3>
-												Laporan banyaknya Pemesanan.
-											</div>
-												
-											<div class="card-body">
-												<canvas id="lineChart"></canvas>
-											</div>							
-											<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-										</div><!-- end card-->					
-									</div>
 
 									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">						
 										<div class="card mb-3">
@@ -373,41 +359,8 @@
 	</script>
 	
 	<script>
-	var ctx1 = document.getElementById("lineChart").getContext('2d');
-	var lineChart = new Chart(ctx1, {
-		type: 'bar',
-		data: {
-			labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-			datasets: [{
-					label: 'Online',
-					backgroundColor: '#3EB9DC',
-					data: [5, 14, 6, 7, 13, 9, 13, 16, 11, 8, 12, 9] 
-				}, {
-					label: 'Offline',
-					backgroundColor: '#EBEFF3',
-					data: [12, 14, 6, 7, 13, 6, 13, 16, 10, 8, 11, 12]
-				}]
-				
-		},
-		options: {
-						tooltips: {
-							mode: 'index',
-							intersect: false
-						},
-						responsive: true,
-						scales: {
-							xAxes: [{
-								stacked: true,
-							}],
-							yAxes: [{
-								stacked: true
-							}]
-						}
-					}
-	});
 
-
-	var ctx2 = document.getElementById("pieChart").getContext('2d');
+	var ctx = document.getElementById("pieChart").getContext('2d');
 	function setMapel() {
 		if (
 			document.getElementById('mtk').innerHTML == "" ||
@@ -420,7 +373,7 @@
 			setTimeout(setMapel, 150);
 		}
 		else {
-			var pieChart = new Chart(ctx2, {
+			var pieChart = new Chart(ctx, {
 			type: 'pie',
 			data: {
 					datasets: [{
