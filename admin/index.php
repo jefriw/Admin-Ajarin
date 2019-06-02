@@ -219,10 +219,6 @@
                         <a class="active" href="#"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
                     </li>
 
-                    <li class="submenu">
-                        <a href="charts.php"><i class="fa fa-fw fa-area-chart"></i><span> Charts </span> </a>
-                    </li>
-
             </ul>
 
             <div class="clearfix"></div>

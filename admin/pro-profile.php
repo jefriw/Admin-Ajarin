@@ -102,10 +102,6 @@
                     <li class="submenu">
                         <a href="index.php"><i class="fa fa-fw fa-bars"></i><span> Dashboard </span> </a>
                     </li>
-
-                    <li class="submenu">
-                        <a href="charts.html"><i class="fa fa-fw fa-area-chart"></i><span> Charts </span> </a>
-                    </li>
                     
             </ul>
 
