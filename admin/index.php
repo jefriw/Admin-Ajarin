@@ -47,6 +47,8 @@
 	firebase.initializeApp(firebaseConfig);
 
 	let db = firebase.firestore();
+	let type1 = 0;
+	let type2 = 0;
 	let totalGuru = 0;
 	let totalMurid = 0;
 	let totalPesan = 0;
@@ -78,6 +80,21 @@
   			document.getElementById('J_murid').innerHTML = totalMurid;
 	});
 
+	db.collection("orders").where("type", "==", "online").get().then(function(querySnapshot) {
+	    querySnapshot.forEach(function(doc) {
+	    	type1++;
+	    });
+	    	document.getElementById('online').innerHTML = type1;
+	    	// console.log(type1);
+	});
+
+	db.collection("orders").where("type", "==", "offline").get().then(function(querySnapshot) {
+	    querySnapshot.forEach(function(doc) {
+	    	type2++;
+	    });
+	    	document.getElementById('offline').innerHTML = type2;
+	    	// console.log(type2);
+	});
 
 	db.collection("orders").where("subjects", "array-contains", "MTK").get().then(function(querySnapshot) {
 	    querySnapshot.forEach(function(doc) {
@@ -132,12 +149,14 @@
 		
 <body class="adminbody"><div id="main">
 
-<div id="mtk"></div>
-<div id="ipa"></div>
-<div id="ips"></div>
-<div id="pkn"></div>
-<div id="sej"></div>
-<div id="bin"></div>
+<div id="mtk" hidden></div>
+<div id="ipa" hidden></div>
+<div id="ips" hidden></div>
+<div id="pkn" hidden></div>
+<div id="sej" hidden></div>
+<div id="bin" hidden></div>
+<div id="online" hidden></div>
+<div id="offline" hidden></div>
 	<!-- top bar navigation -->
 	<div class="headerbar">
 
@@ -274,7 +293,7 @@
 							
 							<div class="row">
 							
-									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">						
+									<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-8">						
 										<div class="card mb-3">
 											<div class="card-header">
 												<h3><i class="fa fa-line-chart"></i> Tingkat Pemesanan</h3>
@@ -288,29 +307,15 @@
 										</div><!-- end card-->					
 									</div>
 
-									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">						
+									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">						
 										<div class="card mb-3">
 											<div class="card-header">
-												<h3><i class="fa fa-bar-chart-o"></i> Matapelajaran Yang Sering Dipesan</h3>
-												Grafik mata pelajaran yang paling banyak dipesan.
+												<h3><i class="fa fa-bar-chart-o"></i> Jumlah Matapelajaran Yang Dipesan</h3>
+												Grafik mata pelajaran yang dipesan.
 											</div>
 												
 											<div class="card-body">
 												<canvas id="pieChart"></canvas>
-											</div>
-											<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-										</div><!-- end card-->					
-									</div>
-									
-									<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-3">						
-										<div class="card mb-3">
-											<div class="card-header">
-												<h3><i class="fa fa-bar-chart-o"></i> Matapelajaran Yang Kurang Diminati</h3>
-												Grafik mata pelajaran yang tidak kurang disukai.
-											</div>
-												
-											<div class="card-body">
-												<canvas id="doughnutChart"></canvas>
 											</div>
 											<div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
 										</div><!-- end card-->					
@@ -460,36 +465,6 @@
 
 	setMapel();
 
-	var ctx3 = document.getElementById("doughnutChart").getContext('2d');
-	var doughnutChart = new Chart(ctx3, {
-		type: 'doughnut',
-		data: {
-				datasets: [{
-					data: [6, 10, 5, 4, 7, 5],
-                    backgroundColor: [
-                        'rgba(255,99,132,1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    label: 'Mata Pelajaran'
-                }],
-                labels: [
-                    "Bahasa Indonesia",
-                    "Matematika",
-                    "PKN",
-                    "IPS",
-                    "IPA",
-                    "Bahasa Inggris"
-                ]
-			},
-			options: {
-				responsive: true
-			}
-	 
-	});
 	</script>
 <!-- END Java Script for this page -->
 
